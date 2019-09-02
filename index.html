@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<!-- google font -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+
+		<!-- DataTable -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+		<!-- leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+		integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+		crossorigin=""/>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<style>
+	   	 #loadinggif{
+		   position: fixed;
+		   z-index: 9000;
+		   top: 0;
+		   left: 0;
+		   width: 100vw;
+		   height: 100vh;
+		   background: rgba(0,0,0,.4);
+		   text-align: center;
+		   padding-top: 45vh;
+		   display: none;
+		 }
+		 #loadinggif img{
+		   width: 100px;
+		 }
+		 .countriesboundaries{
+		 	pointer-events: none !important;
+		 }
+		 .form-control{
+		 	height: inherit;
+		 	padding: 0 .75rem;
+		 }
+   		</style>
+
+		<title>CXB Education Update - July 2018</title>
+
+	</head>
+
+	<body>
+
+		<div id="loadinggif"><img src="https://ui-ex.com/images/gif-transparent-loading-4.gif"></div>
+		
+		<div class="bluebackground">
+			<div class="container">
+				<div class="row">
+					<table style="width:100%">
+						<tr>
+							<td>
+								<font class="btitle">Cox's Bazar Education Sector</font>
+								<p class= "stitle">Cox's Bazar Education Sector Partner Mapping</p>
+							</td>
+							<td style="width:50px; padding-right: 15px"><img class="redhead" src="images/education.png"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="whitebackground">
+			<div class="container">
+				<div class="row">
+					<!-- Block -->
+					<div class="col-md-12" style="text-align: left">
+						<div class="col-sm">
+							<p style='margin-bottom: 10px; margin-top: 5px; color: grey'>Activity and Mapping of Cox Bazar Education Cluster Partners.</p>
+						</div>
+						<div class="col-sm" style="margin-bottom: 0px">
+							<font class="tdtit"><h3>Programme and Implementing Partners</h3></font>
+						</div>
+					</div>
+					<div class="horizontal_line" style="margin-top: 5px"></div>
+				</div>
+			</div>
+		</div>
+		<div class="whitebackground">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4" style="margin-bottom: 0px">
+						<p style='margin-bottom: 0px; margin-top: 0x; padding-left: 30px; color: grey'>SSID</p>
+					</div>
+					<div class="col-sm-4" style="margin-bottom: 0px">
+						<p style='margin-bottom: 0px; margin-top: 0x; padding-left: 170px; color: grey'>Program Partners</p>
+					</div>
+					<div class="col-sm-4" style="margin-bottom: 0px">
+						<p style='margin-bottom: 0px; margin-top: 0x; padding-left: 150px; color: grey'>Implementation Partners</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+				</div>
+					<div class="col-md-12" style="margin-top: 20px; margin-right: 20px" id="sankeydiagram"></div>
+				</div>
+			</div>
+		</div>
+		<div class="whitebackground_footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<table width = '100%'>
+							<tr>
+								<td align='right'; valign='top'><a target="_blank" href="https://data.humdata.org/dataset/cewg-data-on-sector-based-feedback-central-sulawesi-response"><img style="height: 60%; margin-top: 15px; padding-right: 15px"; class="img-responsive hdx" src='images/poweredby.png'></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+		<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+		integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+		crossorigin=""></script>
+
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+
+		<script type="text/javascript">
+
+
+			//SANKEY DIAGRAM
+				//---------------------------------------------------------------------------------------------------------------------------------------
+
+				function draw_sankey(thedata){
+					// console.log(thedata);
+					google.charts.load('current', {'packages':['sankey']});
+					google.charts.setOnLoadCallback(drawChart);
+
+					function drawChart() {
+						var data = new google.visualization.arrayToDataTable(thedata);
+						var colors = ['#418FDE', '#E56A54', '#999999'];
+						var colors = ['#63A3E4', '#E98573', '#ABABAB', '#86B7EA', '#EEA092', '#BEBEBE', '#A8CCF0', '#F3BBB1', '#D0D0D0'];
+
+						console.log(thedata);
+						// Sets chart options.
+						var options = {
+							sankey: {
+							node: {
+								label: {
+						        fontName: 'Roboto Condensed',
+						        fontSize: 9,
+						      	color: '#000000',
+						      	italic: true
+						    },
+								colors: colors
+							},
+							link: {
+								colorMode: 'gradient',
+								colors: colors,
+								strokeWidth: 8 
+							}
+						},
+						backgroundColor : 'transparent'
+						};
+
+						// Instantiates and draws our chart, passing in some options.
+						var chart = new google.visualization.Sankey(document.getElementById('sankeydiagram'));
+						chart.draw(data, options);
+					}
+				}
+				
+			//SANKEY-----------------------------------------
+					d3.csv('data/partner_mapping.csv',function(thedata){
+						// console.log(thedata);
+						sankeydata = [['from','to','val']];
+						thedata.forEach(function(d){
+							sankeydata.push([d['SSID'],d['ProgrammePartnersName'],parseInt(d['NumberofProgrammePartners'])]);
+						})
+						draw_sankey(sankeydata);
+					})	
+		</script>
+	</body>
+</html>
